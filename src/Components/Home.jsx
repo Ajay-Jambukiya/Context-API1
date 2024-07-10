@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import { RiH3 } from "react-icons/ri";
+import axios from "axios";
 
 const Home = () => {
   const [user, setUser] = useState();
@@ -12,6 +13,7 @@ const Home = () => {
 
   // let getData = () => {
   //   fetch("http://localhost:1000/users")
+  //   // fetch("https://jsonplaceholder.typicode.com/users")
   //     .then((res) => {
   //       return res.json().then((data) => {
   //         console.log(data);
@@ -23,22 +25,34 @@ const Home = () => {
   //     });
   // };
 
-  let getData =async () => {
-    try{
+  // let getData =async () => {
+  //   try{
+  //     let res =await fetch("http://localhost:1000/users")
+  //     // let res =await fetch("http://localhost:1000/products")
+  //     let data =await res.json()
+  //     setUser(data)
+  //   }catch(err){
+  //     console.log(data);
+  //     setUser(data);
+  //   }
+  // };
 
+  // let getData=()=>{
+  //   axios.get('https://jsonplaceholder.typicode.com/users').then((res)=>{
+  //     console.log(res)
+  //     setUser(res.data)
+  //   }).catch((err)=>console.log(err))
+  // }
+
+   let getData =async () => {
+    try{
+      let res =await axios.get("http://localhost:1000/users")
+      setUser(res.data)
     }catch(err){
       console.log(data);
-      setUser(data);
     }
-    fetch("http://localhost:1000/users")
-      .then((res) => {
-        return res.json().then((data) => {
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   };
+
 
   return (
     <div class="container mt-3">

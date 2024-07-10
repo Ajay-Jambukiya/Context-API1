@@ -9,16 +9,32 @@ const Register = () => {
     let [user,setUser]=useState({...initialState})
     let navigate=useNavigate()
 
-    let handleSubmit=(e)=>{
+    // let handleSubmit=(e)=>{
+    //     e.preventDefault()
+    //     // alert(JSON.stringify(user))
+    //     axios.post('https://664619b951e227f23aadc7d0.mockapi.io/users',user).then((res)=>{
+    //         toast.success('register succesfully')
+    //         navigate('/login')
+    //     }).catch((error)=>{
+    //         toast.error(error.message)
+    //     })
+    // }
+
+     let handleSubmit=async(e)=>{
         e.preventDefault()
         // alert(JSON.stringify(user))
-        axios.post('https://664619b951e227f23aadc7d0.mockapi.io/users',user).then((res)=>{
-            toast.success('register succesfully')
-            navigate('/login')
-        }).catch((error)=>{
-            toast.error(error.message)
-        })
-    }
+        try{
+          await fetch('https://664619b951e227f23aadc7d0.mockapi.io/users',{
+            method:'POST',
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify(user)
+          })
+          toast.success('register succesfully')
+          navigate('/login')
+        }catch(err){
+          toast.error(err)
+        }
+    };
 
   return (
     <div class="container mt-3 col-8">

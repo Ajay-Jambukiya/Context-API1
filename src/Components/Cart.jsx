@@ -12,7 +12,6 @@ const Cart = () => {
   }, [context.total]);
   return (
     <div>
-      <Dashboard />
       <div className="container mt-4">
         <h3>Shopping Cart</h3>
         <div className="table-responsive">
