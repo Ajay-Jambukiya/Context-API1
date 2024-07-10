@@ -33,7 +33,7 @@ const Dashboard = () => {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <Link to={"/dash"} class="nav-link active">
+                  <Link to="/dash" class="nav-link active">
                     Home
                   </Link>
                 </li>
@@ -68,7 +68,7 @@ const Dashboard = () => {
                   </a>
                 </li>
                 <li class="nav-item">
-                  <button to={"/"} class="nav-link" onClick={handlelogout}>
+                  <button  class="nav-link" onClick={handlelogout}>
                     Logout
                   </button>
                 </li>

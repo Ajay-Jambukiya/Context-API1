@@ -39,7 +39,7 @@ const Navbar = () => {
             </form>
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="nav-item">
-                <Link to={"/"} class="nav-link active" aria-current="page">
+                <Link to={"cart"} class="nav-link active" aria-current="page">
                   <FaCartShopping size={25} />
                   <span
                     class="badge rounded-pill bg-warning text-dark"

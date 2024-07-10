@@ -22,7 +22,7 @@ const ProductCard = () => {
   return (
     <div className='row'>
         {products.map((product,index)=>
-            <div class="card col-3 m-3">
+            <div class="card col-3 m-3" key={index}>
             <img class="card-img-top" src={getImageUrl(product.image)} alt={product.name} width={'100px'} height={'200px'}/>
             <div class="card-body" key={index}>
                 <h4 class="card-title">{product.name}</h4>

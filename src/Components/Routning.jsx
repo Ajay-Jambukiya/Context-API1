@@ -19,22 +19,23 @@ const Routning = () => {
         <DataProvider>
             <Routes>
                 <Route path="/" element={<App/>}>
-                <Route path="" element={<Home/>}/>
-                <Route path="home" element={<Home/>}/>
-                <Route path="/register" element={<Register/>}/>
-                <Route path="/login" element={<Login/>}/>
-                <Route path="/productcard" element={<ProductCard/>}/>
-            </Route>
+                    <Route path="" element={<Home/>}/>
+                    <Route path="home" element={<Home/>}/>
+                    <Route path="/register" element={<Register/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/productcard" element={<ProductCard/>}/>
+                </Route>
 
-            <Route path="/admindash" element={<AdminDashboard/>}>
-                <Route path="users" element={<ViewUsers/>}/>
-                <Route path="addproduct" element={<AddProduct/>}/>
-                <Route path="viewproduct" element={<ViewProduct/>}/>
-            </Route>
+                <Route path="/admindash" element={<AdminDashboard/>}>
+                    <Route path="users" element={<ViewUsers/>}/>
+                    <Route path="addproduct" element={<AddProduct/>}/>
+                    <Route path="viewproduct" element={<ViewProduct/>}/>
+                </Route>
 
-            <Route path="/dash" element={<Dashboard/>}/>
-                <Route path='' element={<ProductCard/>}/>
-                <Route path='cart' element={<Cart/>}/>
+                <Route path="/dash" element={<Dashboard/>}>
+                    <Route path='' element={<ProductCard/>}/>
+                    <Route path='cart' element={<Cart/>}/>
+                </Route>
             </Routes>
         </DataProvider>
     </div>
